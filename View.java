@@ -161,12 +161,13 @@ public class View extends JFrame {
                 bowlerNumberLabel.setText("0");
                 return (-1);
             } else {
-                if (playerScoreJLabel.getText() == targetScoreLabel.getText()) {
+                if (Integer.parseInt(playerScoreJLabel.getText()) == Integer.parseInt(targetScoreLabel.getText())-1) {
                     JOptionPane.showMessageDialog(this, "BAD LUCK! You got out and drew the game...");
+                    return (-3);
                 } else {
                     JOptionPane.showMessageDialog(this, "OUT! You lost hehe xD");
+                    return (-2);
                 }
-                return (-2);
             }
         }
         if (inningsNumber.getText() == "1") {
@@ -178,16 +179,16 @@ public class View extends JFrame {
             bowlerNumberLabel.setText(String.valueOf(compChoice));
             batterNumberLabel.setText(String.valueOf(userNumber));
             playerScoreJLabel.setText(String.valueOf(score + userNumber));
-            if (Integer.parseInt(playerScoreJLabel.getText()) > Integer.parseInt(targetScoreLabel.getText())) {
+            if (Integer.parseInt(playerScoreJLabel.getText()) >= Integer.parseInt(targetScoreLabel.getText())) {
                 JOptionPane.showMessageDialog(this, "CONGRATS! You won!");
-                System.exit(0);
+                return (-4);
             }
             return (score + userNumber);
         }
     }
 
-    void displayChangeInnings(){
-        JOptionPane.showMessageDialog(this, 
+    void displayChangeInnings() {
+        JOptionPane.showMessageDialog(this,
                 "Looks like you gave up. The computer felt bad for you and accepted to declare. :P");
     }
 
