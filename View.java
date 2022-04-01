@@ -33,7 +33,7 @@ public class View extends JFrame {
 
     public View() {
 
-        this.setTitle("Type Cricket");
+        this.setTitle("Type Cricket with PES1UG19CS083");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.getContentPane().setBackground(Color.CYAN);
         this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
